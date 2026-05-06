@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
 
 const ENABLE_RECAPTCHA = import.meta.env.VITE_ENABLE_RECAPTCHA !== "false";
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
@@ -10,7 +9,7 @@ export default function useContactForm() {
 
     const recaptchaReady = ENABLE_RECAPTCHA && Boolean(RECAPTCHA_SITE_KEY);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (recaptchaReady && !recaptchaToken) {
@@ -18,27 +17,43 @@ export default function useContactForm() {
             return;
         }
 
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const payload = {
+            name: formData.get("name") || "",
+            email: formData.get("email") || "",
+            project_type: formData.get("project_type") || "",
+            message: formData.get("message") || "",
+            recaptchaToken: recaptchaToken || "",
+        };
+
         setIsSubmitting(true);
 
-        emailjs
-            .sendForm(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                e.target,
-                { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
-            )
-            .then(() => {
-                alert("Message sent successfully!");
-            })
-            .catch((error) => {
-                console.error("EmailJS error:", error);
-                alert("Failed to send message. Please try again.");
-            })
-            .finally(() => {
-                setIsSubmitting(false);
-                setRecaptchaToken(null);
-                e.target.reset();
+        try {
+            const response = await fetch("/.netlify/functions/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
             });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || "Failed to send message.");
+            }
+
+            alert("Message sent successfully!");
+            form.reset();
+            setRecaptchaToken(null);
+        } catch (error) {
+            console.error("Contact form error:", error);
+            alert(error.message || "Failed to send message. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return {

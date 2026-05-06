@@ -63,11 +63,11 @@ function Contact({
                             </Text>
 
                             <Link
-                                href="mailto:hello@abmcodeworks.com"
+                                href="mailto:admin@abmcodeworks.com"
                                 color="abm.teal"
                                 fontWeight="800"
                             >
-                                hello@abmcodeworks.com
+                                admin@abmcodeworks.com
                             </Link>
                         </Box>
                     </Stack>
@@ -172,6 +172,7 @@ function Contact({
                                 color="white"
                                 isDisabled={recaptchaReady && (!recaptchaToken || isSubmitting)}
                                 isLoading={isSubmitting}
+                                loadingText="Sending"
                                 rightIcon={<FaArrowRight />}
                                 _hover={{
                                     bg: "abm.tealDark",
