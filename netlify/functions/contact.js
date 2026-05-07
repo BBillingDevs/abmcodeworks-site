@@ -2,6 +2,9 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const CONTACT_TO_EMAIL = "admin@abmcodeworks.com";
+const CONTACT_FROM_EMAIL = "ABM Codeworks <onboarding@resend.dev>";
+
 function jsonResponse(statusCode, body) {
     return {
         statusCode,
@@ -51,14 +54,9 @@ export async function handler(event) {
             });
         }
 
-        const toEmail = process.env.CONTACT_TO_EMAIL || "hello@abmcodeworks.com";
-        const fromEmail =
-            process.env.CONTACT_FROM_EMAIL ||
-            "ABM Codeworks <admin@abmcodeworks.com>";
-
         const { data, error } = await resend.emails.send({
-            from: fromEmail,
-            to: [toEmail],
+            from: CONTACT_FROM_EMAIL,
+            to: [CONTACT_TO_EMAIL],
             replyTo: email,
             subject: `New ABM Codeworks enquiry from ${name}`,
             html: `

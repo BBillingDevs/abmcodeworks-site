@@ -25,9 +25,10 @@ function Contact({
     setRecaptchaToken,
     isSubmitting,
     recaptchaSiteKey,
+    sectionId = "contact",
 }) {
     return (
-        <Box id="contact" bg="white">
+        <Box id={sectionId} bg="white">
             <Container maxW="7xl" py={{ base: 16, md: 24 }}>
                 <SimpleGrid
                     columns={{ base: 1, lg: 2 }}
@@ -63,11 +64,11 @@ function Contact({
                             </Text>
 
                             <Link
-                                href="mailto:hello@abmcodeworks.com"
+                                href="mailto:admin@abmcodeworks.com"
                                 color="abm.teal"
                                 fontWeight="800"
                             >
-                                hello@abmcodeworks.com
+                                admin@abmcodeworks.com
                             </Link>
                         </Box>
                     </Stack>

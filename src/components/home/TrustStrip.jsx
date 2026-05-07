@@ -7,7 +7,7 @@ import {
     Text,
 } from "@chakra-ui/react";
 
-import { trustItems } from "../../data/homeData";
+import { trustItems } from "../../data/siteData";
 
 function TrustStrip() {
     return (

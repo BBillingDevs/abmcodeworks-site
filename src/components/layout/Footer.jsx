@@ -1,4 +1,13 @@
-import { Box, Container, Flex, HStack, Image, Text } from "@chakra-ui/react";
+import {
+    Box,
+    Container,
+    Flex,
+    HStack,
+    Image,
+    Link,
+    Text,
+} from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
 
@@ -25,9 +34,35 @@ function Footer() {
                         </Box>
                     </HStack>
 
-                    <Text fontSize="sm" color="whiteAlpha.700">
-                        Web, mobile and cloud systems by ABM Codeworks.
-                    </Text>
+                    <HStack spacing={5} wrap="wrap">
+                        <Link
+                            as={RouterLink}
+                            to="/website-design-zimbabwe"
+                            fontSize="sm"
+                            color="whiteAlpha.700"
+                            _hover={{ color: "white" }}
+                        >
+                            Website Design
+                        </Link>
+                        <Link
+                            as={RouterLink}
+                            to="/software-development-zimbabwe"
+                            fontSize="sm"
+                            color="whiteAlpha.700"
+                            _hover={{ color: "white" }}
+                        >
+                            Software Development
+                        </Link>
+                        <Link
+                            as={RouterLink}
+                            to="/case-studies"
+                            fontSize="sm"
+                            color="whiteAlpha.700"
+                            _hover={{ color: "white" }}
+                        >
+                            Case Studies
+                        </Link>
+                    </HStack>
                 </Flex>
             </Container>
         </Box>

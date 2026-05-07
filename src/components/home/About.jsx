@@ -9,7 +9,7 @@ import {
 
 import SectionEyebrow from "../ui/SectionEyebrow";
 import ValueCard from "../ui/ValueCard";
-import { values } from "../../data/homeData";
+import { values } from "../../data/siteData";
 
 function About() {
     return (

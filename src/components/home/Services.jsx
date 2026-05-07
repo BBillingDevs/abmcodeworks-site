@@ -9,7 +9,7 @@ import {
 
 import SectionEyebrow from "../ui/SectionEyebrow";
 import ServiceCard from "../ui/ServiceCard";
-import { services } from "../../data/homeData";
+import { services } from "../../data/siteData";
 
 function Services() {
     return (

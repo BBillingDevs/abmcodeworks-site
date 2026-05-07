@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 
+import Seo from "../components/seo/Seo";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
@@ -9,15 +10,17 @@ import About from "../components/home/About";
 import Services from "../components/home/Services";
 import Process from "../components/home/Process";
 import Clients from "../components/home/Clients";
-import Contact from "../components/home/Contact";
-
-import useContactForm from "../hooks/useContactForm";
+import CTASection from "../components/ui/CTASection";
 
 function Home() {
-  const contactForm = useContactForm();
-
   return (
     <Box bg="abm.paper">
+      <Seo
+        title="ABM Codeworks | Web, Mobile & Software Development in Zimbabwe"
+        description="ABM Codeworks designs and builds reliable websites, web apps, mobile apps, custom dashboards, school systems, e-commerce platforms and cloud software for organisations in Zimbabwe."
+        path="/"
+      />
+
       <Navbar />
 
       <Box as="main">
@@ -27,7 +30,7 @@ function Home() {
         <Services />
         <Process />
         <Clients />
-        <Contact {...contactForm} />
+        <CTASection />
       </Box>
 
       <Footer />

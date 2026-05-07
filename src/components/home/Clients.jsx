@@ -2,7 +2,7 @@ import { Box, Container, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
 
 import SectionEyebrow from "../ui/SectionEyebrow";
 import ClientLogo from "../ui/ClientLogo";
-import { clients } from "../../data/homeData";
+import { clients } from "../../data/siteData";
 
 function Clients() {
     return (

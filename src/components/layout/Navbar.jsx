@@ -13,10 +13,12 @@ import {
     VStack,
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { Link as RouterLink } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
 import NavLink from "../ui/NavLink";
 import MobileNavLink from "../ui/MobileNavLink";
+import { navItems } from "../../data/siteData";
 
 function Navbar() {
     const { isOpen, onToggle, onClose } = useDisclosure();
@@ -34,7 +36,7 @@ function Navbar() {
         >
             <Container maxW="7xl" py={3}>
                 <Flex align="center" justify="space-between" gap={6}>
-                    <Link href="#home" _hover={{ textDecoration: "none" }}>
+                    <Link as={RouterLink} to="/" _hover={{ textDecoration: "none" }}>
                         <HStack spacing={3}>
                             <Box
                                 bg="white"
@@ -61,14 +63,15 @@ function Navbar() {
                     </Link>
 
                     <HStack display={{ base: "none", lg: "flex" }} spacing={7}>
-                        <NavLink href="#about">About</NavLink>
-                        <NavLink href="#services">Services</NavLink>
-                        <NavLink href="#process">Process</NavLink>
-                        <NavLink href="#clients">Clients</NavLink>
+                        {navItems.map((item) => (
+                            <NavLink key={item.label} href={item.href}>
+                                {item.label}
+                            </NavLink>
+                        ))}
 
                         <Button
-                            as="a"
-                            href="#contact"
+                            as={RouterLink}
+                            to="/contact"
                             size="sm"
                             rounded="full"
                             bg="abm.teal"
@@ -100,25 +103,19 @@ function Navbar() {
                     overflowY="auto"
                 >
                     <VStack align="stretch" spacing={1} px={5} py={5}>
-                        <MobileNavLink href="#about" onClick={onClose}>
-                            About
-                        </MobileNavLink>
-
-                        <MobileNavLink href="#services" onClick={onClose}>
-                            Services
-                        </MobileNavLink>
-
-                        <MobileNavLink href="#process" onClick={onClose}>
-                            Process
-                        </MobileNavLink>
-
-                        <MobileNavLink href="#clients" onClick={onClose}>
-                            Clients
-                        </MobileNavLink>
+                        {navItems.map((item) => (
+                            <MobileNavLink
+                                key={item.label}
+                                href={item.href}
+                                onClick={onClose}
+                            >
+                                {item.label}
+                            </MobileNavLink>
+                        ))}
 
                         <Button
-                            as="a"
-                            href="#contact"
+                            as={RouterLink}
+                            to="/contact"
                             mt={3}
                             rounded="full"
                             bg="abm.teal"
@@ -126,7 +123,7 @@ function Navbar() {
                             onClick={onClose}
                             _hover={{ bg: "abm.tealDark" }}
                         >
-                            Contact ABM
+                            Contact Us
                         </Button>
                     </VStack>
                 </Box>

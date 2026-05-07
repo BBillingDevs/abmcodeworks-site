@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 import SectionEyebrow from "../ui/SectionEyebrow";
-import { processSteps } from "../../data/homeData";
+import { processSteps } from "../../data/siteData";
 
 function Process() {
     return (
