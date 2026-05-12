@@ -27,14 +27,14 @@ const theme = extendTheme({
   },
   colors: {
     abm: {
-      navy: "#0B172A",
-      navy2: "#10233F",
+      navy: "#07111F",
+      navy2: "#0D1B2F",
       ink: "#16243E",
       teal: "#2C7A7B",
       tealDark: "#1F5F60",
       gold: "#C89B3C",
-      paper: "#F7F6F1",
-      soft: "#EEF3F0",
+      paper: "#F5F3EC",
+      soft: "#EAF2EF",
       line: "#D8DDD5",
     },
   },

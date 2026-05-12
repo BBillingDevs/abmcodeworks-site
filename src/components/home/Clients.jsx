@@ -1,30 +1,42 @@
-import { Box, Container, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  SimpleGrid,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 
 import SectionEyebrow from "../ui/SectionEyebrow";
 import ClientLogo from "../ui/ClientLogo";
 import { clients } from "../../data/siteData";
 
 function Clients() {
-    return (
-        <Box id="clients" bg="abm.paper">
-            <Container maxW="7xl" py={{ base: 16, md: 24 }}>
-                <Stack spacing={4} textAlign="center" maxW="760px" mx="auto" mb={12}>
-                    <SectionEyebrow>Selected clients</SectionEyebrow>
+  return (
+    <Box id="clients" bg="abm.paper">
+      <Container maxW="7xl" py={{ base: 16, md: 24 }}>
+        <Stack spacing={4} textAlign="center" maxW="780px" mx="auto" mb={12}>
+          <SectionEyebrow>Selected clients</SectionEyebrow>
 
-                    <Heading as="h2" size="2xl" color="abm.navy" letterSpacing="-0.04em">
-                        Trusted by organisations across education, tourism, conservation,
-                        retail and commerce.
-                    </Heading>
-                </Stack>
+          <Heading as="h2" size="2xl" color="abm.navy" letterSpacing="-0.045em">
+            Project windows opened for education, tourism, conservation, retail
+            and commerce.
+          </Heading>
 
-                <SimpleGrid columns={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing={6}>
-                    {clients.map((client) => (
-                        <ClientLogo key={client.alt} {...client} />
-                    ))}
-                </SimpleGrid>
-            </Container>
-        </Box>
-    );
+          <Text color="gray.600" fontSize="lg" lineHeight="1.8">
+            A small selection of organisations and products supported through
+            web, app, e-commerce and custom software work.
+          </Text>
+        </Stack>
+
+        <SimpleGrid columns={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing={6}>
+          {clients.map((client, index) => (
+            <ClientLogo key={client.alt} index={index + 1} {...client} />
+          ))}
+        </SimpleGrid>
+      </Container>
+    </Box>
+  );
 }
 
 export default Clients;
