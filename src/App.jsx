@@ -19,6 +19,7 @@ import Eula from "./pages/Eula";
 import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
 import ContactPage from "./pages/ContactPage";
+import CookieBanner from "./components/CookieBanner";
 
 const theme = extendTheme({
   fonts: {
@@ -132,6 +133,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>{" "}
         </Router>
+        <CookieBanner />
       </ChakraProvider>
     </HelmetProvider>
   );
