@@ -11,8 +11,7 @@ import { HelmetProvider } from "react-helmet-async";
 
 import Home from "./pages/Home";
 import ServicePage from "./pages/ServicePage";
-import CaseStudiesPage from "./pages/CaseStudiesPage";
-import CaseStudyPage from "./pages/CaseStudyPage";
+import PortfolioPage from "./pages/PortfolioPage";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Eula from "./pages/Eula";
@@ -103,8 +102,7 @@ function App() {
               element={<ServicePage serviceKey="schoolSoftware" />}
             />
 
-            <Route path="/case-studies" element={<CaseStudiesPage />} />
-            <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
 
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />

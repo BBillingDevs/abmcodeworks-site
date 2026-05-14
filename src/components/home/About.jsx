@@ -21,21 +21,32 @@ import { values } from "../../data/siteData";
 
 function About() {
   return (
-    <Box id="about" bg="abm.paper" position="relative" overflow="hidden">
+    <Box
+      id="about"
+      bg="abm.paper"
+      position="relative"
+      overflow="hidden"
+      w="100%"
+    >
       <Box
         position="absolute"
         inset="0"
         opacity="0.5"
         bg="
-                    radial-gradient(circle at 10% 12%, rgba(44,122,123,0.11), transparent 24%),
-                    radial-gradient(circle at 90% 80%, rgba(200,155,60,0.11), transparent 28%)
-                "
+          radial-gradient(circle at 10% 12%, rgba(44,122,123,0.11), transparent 24%),
+          radial-gradient(circle at 90% 80%, rgba(200,155,60,0.11), transparent 28%)
+        "
       />
 
-      <Container maxW="7xl" py={{ base: 16, md: 24 }} position="relative">
+      <Container
+        maxW="1600px"
+        px={{ base: 4, md: 8, xl: 10 }}
+        py={{ base: 16, md: 24 }}
+        position="relative"
+      >
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
-          spacing={{ base: 10, lg: 14 }}
+          spacing={{ base: 10, lg: 16 }}
           alignItems="center"
         >
           <Stack spacing={6}>

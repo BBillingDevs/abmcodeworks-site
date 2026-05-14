@@ -175,16 +175,17 @@ function Hero() {
       overflow="hidden"
       bg="abm.navy"
       color="white"
+      w="100%"
     >
       <Box
         position="absolute"
         inset="0"
         bg="
-                    radial-gradient(circle at 14% 18%, rgba(44,122,123,0.42), transparent 28%),
-                    radial-gradient(circle at 84% 14%, rgba(200,155,60,0.20), transparent 26%),
-                    radial-gradient(circle at 68% 80%, rgba(76,201,240,0.13), transparent 32%),
-                    linear-gradient(135deg, #07111F 0%, #0B172A 42%, #10233F 100%)
-                "
+          radial-gradient(circle at 14% 18%, rgba(44,122,123,0.42), transparent 28%),
+          radial-gradient(circle at 84% 14%, rgba(200,155,60,0.20), transparent 26%),
+          radial-gradient(circle at 68% 80%, rgba(76,201,240,0.13), transparent 32%),
+          linear-gradient(135deg, #07111F 0%, #0B172A 42%, #10233F 100%)
+        "
       />
 
       <Box
@@ -192,13 +193,18 @@ function Hero() {
         inset="0"
         opacity="0.16"
         bgImage="
-                    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
-                "
+          linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+        "
         bgSize="42px 42px"
       />
 
-      <Container maxW="7xl" position="relative" py={{ base: 16, md: 24 }}>
+      <Container
+        maxW="1600px"
+        px={{ base: 4, md: 8, xl: 10 }}
+        position="relative"
+        py={{ base: 16, md: 24 }}
+      >
         <Stack spacing={{ base: 12, md: 14 }}>
           <HeroIntro />
           <DeveloperDesktop />
@@ -210,7 +216,14 @@ function Hero() {
 
 function HeroIntro() {
   return (
-    <Stack spacing={7} textAlign="center" align="center" maxW="960px" mx="auto">
+    <Stack
+      spacing={7}
+      textAlign="center"
+      align="center"
+      maxW="1280px"
+      mx="auto"
+      w="100%"
+    >
       <Badge
         rounded="full"
         px={4}
@@ -228,12 +241,13 @@ function HeroIntro() {
         Zimbabwe-based software studio
       </Badge>
 
-      <Stack spacing={5}>
+      <Stack spacing={5} maxW="1220px">
         <Heading
           as="h1"
           fontSize={{ base: "4xl", md: "6xl", xl: "7xl" }}
           lineHeight="0.94"
           letterSpacing="-0.065em"
+          maxW="1220px"
         >
           We build the systems behind smoother workdays.
         </Heading>
@@ -241,7 +255,7 @@ function HeroIntro() {
         <Text
           fontSize={{ base: "lg", md: "xl" }}
           color="whiteAlpha.820"
-          maxW="760px"
+          maxW="980px"
           mx="auto"
           lineHeight="1.8"
         >

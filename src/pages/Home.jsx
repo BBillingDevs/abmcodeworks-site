@@ -5,7 +5,6 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
 import Hero from "../components/home/Hero";
-import TrustStrip from "../components/home/TrustStrip";
 import About from "../components/home/About";
 import Services from "../components/home/Services";
 import Clients from "../components/home/Clients";
@@ -13,7 +12,7 @@ import CTASection from "../components/ui/CTASection";
 
 function Home() {
   return (
-    <Box bg="abm.paper">
+    <Box bg="abm.paper" w="100%" overflowX="hidden">
       <Seo
         title="ABM Codeworks | Web, Mobile & Software Development in Zimbabwe"
         description="ABM Codeworks designs and builds reliable websites, web apps, mobile apps, custom dashboards, school systems, e-commerce platforms and cloud software for organisations in Zimbabwe."
@@ -22,9 +21,8 @@ function Home() {
 
       <Navbar />
 
-      <Box as="main">
+      <Box as="main" w="100%">
         <Hero />
-        <TrustStrip />
         <About />
         <Services />
         <Clients />

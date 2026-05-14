@@ -13,9 +13,13 @@ import { clients } from "../../data/siteData";
 
 function Clients() {
   return (
-    <Box id="clients" bg="abm.paper">
-      <Container maxW="7xl" py={{ base: 16, md: 24 }}>
-        <Stack spacing={4} textAlign="center" maxW="780px" mx="auto" mb={12}>
+    <Box id="clients" bg="abm.paper" w="100%">
+      <Container
+        maxW="1600px"
+        px={{ base: 4, md: 8, xl: 10 }}
+        py={{ base: 16, md: 24 }}
+      >
+        <Stack spacing={4} textAlign="center" maxW="860px" mx="auto" mb={12}>
           <SectionEyebrow>Selected clients</SectionEyebrow>
 
           <Heading as="h2" size="2xl" color="abm.navy" letterSpacing="-0.045em">

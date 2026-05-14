@@ -13,20 +13,31 @@ import { services } from "../../data/siteData";
 
 function Services() {
   return (
-    <Box id="services" bg="white" position="relative" overflow="hidden">
+    <Box
+      id="services"
+      bg="white"
+      position="relative"
+      overflow="hidden"
+      w="100%"
+    >
       <Box
         position="absolute"
         inset="0"
         opacity="0.55"
         bgImage="
-                    linear-gradient(#EEF3F0 1px, transparent 1px),
-                    linear-gradient(90deg, #EEF3F0 1px, transparent 1px)
-                "
+          linear-gradient(#EEF3F0 1px, transparent 1px),
+          linear-gradient(90deg, #EEF3F0 1px, transparent 1px)
+        "
         bgSize="38px 38px"
       />
 
-      <Container maxW="7xl" py={{ base: 16, md: 24 }} position="relative">
-        <Stack spacing={4} textAlign="center" maxW="780px" mx="auto" mb={12}>
+      <Container
+        maxW="1600px"
+        px={{ base: 4, md: 8, xl: 10 }}
+        py={{ base: 16, md: 24 }}
+        position="relative"
+      >
+        <Stack spacing={4} textAlign="center" maxW="860px" mx="auto" mb={12}>
           <SectionEyebrow>Services</SectionEyebrow>
 
           <Heading as="h2" size="2xl" color="abm.navy" letterSpacing="-0.045em">
